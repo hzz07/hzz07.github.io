@@ -411,8 +411,8 @@ sub {
 img {
 	border: 0;
 	vertical-align: middle;
-	max-width: 100%;
-	max-height: 100%;
+	width: 100%;
+	height: 100%;
 }
 
 svg:not(:root) {
@@ -1659,7 +1659,7 @@ pre .id {
 #page-nav .page-number {
 	width: 20px;
 	height: 25px;
-	background: #4d4d4d;
+	background: #3e92fe;
 	display: inline-block;
 	color: #fff;
 	line-height: 25px;
@@ -1682,7 +1682,7 @@ pre .id {
 }
 
 #page-nav .extend {
-	color: #4d4d4d;
+	color: #3e92fe;
 	margin: 0 27px;
 	opacity: 1
 }
@@ -2155,7 +2155,7 @@ pre .id {
 }
 
 .article-header {
-	border-left: 5px solid #4d4d4d;
+	border-left: 5px solid #3e92fe;
 	padding: 30px 0 15px 25px;
 	padding-left: 7.6923%
 }
@@ -2187,7 +2187,7 @@ pre .id {
 }
 
 .article-more-link a {
-	background: #4d4d4d;
+	background: #3e92fe;
 	color: #fff;
 	font-size: 12px;
 	padding: 5px 8px;
@@ -2484,7 +2484,7 @@ pre .id {
 
 #article-nav .article-nav-link-wrap:hover .article-nav-title,
 #article-nav .article-nav-link-wrap:hover i {
-	color: #4d4d4d
+	color: #3e92fe
 }
 
 #article-nav #article-nav-older {
@@ -2557,7 +2557,7 @@ pre .id {
 .share-icons a.share-outer {
 	border: none;
 	color: #fff;
-	background: #4d4d4d;
+	background: #3e92fe;
 	text-shadow: none
 }
 
@@ -2684,7 +2684,7 @@ pre .id {
 .page-reward .reward-type {
 	font-size: 16px;
 	display: block;
-	color: #4d4d4d;
+	color: #3e92fe;
 	margin: 20px 0 0
 }
 
@@ -2982,7 +2982,7 @@ pre .id {
 	line-height: 1.4;
 	text-align: center;
 	font-weight: 400;
-	color: #4d4d4d;
+	color: #3e92fe;
 	background: transparent;
 	opacity: 0;
 	margin: 0 0 -10px -185px;
@@ -3005,7 +3005,7 @@ pre .id {
 }
 
 .tooltip-top .tooltip-text {
-	border-bottom: 10px solid #4d4d4d;
+	border-bottom: 10px solid #3e92fe;
 	overflow: hidden;
 	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
@@ -3046,7 +3046,7 @@ pre .id {
 	position: absolute;
 	pointer-events: none;
 	border-color: transparent;
-	border-top-color: #4d4d4d;
+	border-top-color: #3e92fe;
 	border-width: 10px;
 	margin-left: -10px
 }
@@ -3370,7 +3370,7 @@ pre .id {
 		position: absolute;
 		width: 100%;
 		z-index: 2;
-		background: #4d4d4d
+		background: #3e92fe
 	}
 	#mobile-nav #header {
 		padding: 10px 0 0
