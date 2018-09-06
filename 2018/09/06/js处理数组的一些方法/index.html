@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2013/9 | Hexo</title>
+  <title>js处理数组的一些方法 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/2013/09/index.html">
+  <meta name="description" content="转载">
+<meta name="keywords" content="js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="js处理数组的一些方法">
+<meta property="og:url" content="http://yoursite.com/2018/09/06/js处理数组的一些方法/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="转载">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-06T09:27:26.968Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="js处理数组的一些方法">
+<meta name="twitter:description" content="转载">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -58,6 +63,10 @@
 				<li><a href="/">主页</a></li>
 	        
 				<li><a href="/photos">相册</a></li>
+	        
+				<li><a href="/suibi">随笔</a></li>
+	        
+				<li><a href="/categories">分类</a></li>
 	        
 			</ul>
 		</nav>
@@ -109,6 +118,10 @@
 			
 				
 			
+				
+			
+				
+			
 			
 			
 			<nav class="header-nav">
@@ -122,12 +135,16 @@
 			</nav>
 
 			<nav class="header-menu js-header-menu">
-				<ul style="width: 50%">
+				<ul style="width: 70%">
 				
 				
-					<li style="width: 50%"><a href="/">主页</a></li>
+					<li style="width: 25%"><a href="/">主页</a></li>
 		        
-					<li style="width: 50%"><a href="/photos">相册</a></li>
+					<li style="width: 25%"><a href="/photos">相册</a></li>
+		        
+					<li style="width: 25%"><a href="/suibi">随笔</a></li>
+		        
+					<li style="width: 25%"><a href="/categories">分类</a></li>
 		        
 				</ul>
 			</nav>
@@ -142,68 +159,339 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-js处理数组的一些方法" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+  	
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2013" class="archive-year">2013</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2013/09/25/web-worker简易入门/" class="archive-article-date">
-  	<time datetime="2013-09-25T02:55:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2013-09-25</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2013/09/25/web-worker简易入门/">web worker简易入门</a>
+    <h1 class="article-title" itemprop="name">
+      js处理数组的一些方法
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2018/09/06/js处理数组的一些方法/" class="archive-article-date">
+  	<time datetime="2018-09-06T07:59:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-09-06</time>
+</a>
+        
+         
+					<span class="archive-article-date">
+						阅读量 <span id="busuanzi_value_page_pv"></span>
+					</span>
+			
+      </header>
+      
+    
+   
+    <!-- 目录内容 -->
+
+<!-- 目录内容结束 -->
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>转载
+</code></pre><a id="more"></a>
+<p>#一. 迭代方法<br>   ES5为数组定义了5个迭代方法，这些方法大大方便了处理数组的任务，支持这些方法的浏览器有 IE9+,Firefox2+,Safari3+,Opera9.5+和Chrome。</p>
+<p>   ###1 every<br>   对数组中每一项进行给定函数，如果每一项都返回true，则返回true</p>
+<pre><code>var numbers = [1,2,3,4,5,4,3,2,1];
+
+var everyResult = numbers.every(function(item,index,array){
+
+  return item&gt;2;
+&gt;});
+</code></pre><p>alert(everyResult);//false</p>
+<p>##2 some<br>对数组中每一项进行给定函数，如果任意一项都返回true，则返回true</p>
+<pre><code>varnumbers = [1,2,3,4,5,4,3,2,1];
+var everyResult = numbers.some(function(item,index,array){
+
+return item&gt;2;
+
+});
+
+alert(everyResult);//true
+</code></pre><p>##3 filter<br>对数组中每一项进行给定函数,返回该函数会返回true的项组成的数组</p>
+<pre><code>varnumbers = [1,2,3,4,5,4,3,2,1];`
+
+var  everyResult = numbers.filter(function(item,index,array){
+return item&gt;2;
+
+});
+</code></pre><p>alert(everyResult);//  [3,4,5,4,3]</p>
+<p>##4.map<br>对数组中每一项进行给定函数,返回每次函数调用的结果组成的数组</p>
+<pre><code> var numbers = [1,2,3,4,5,4,3,2,1];
+
+var everyResult = numbers.map(function(item,index,array){ return item*2; }); alert(everyResult); // [2, 4, 6, 8, 10, 8, 6, 4, 2] 
+</code></pre><p>5 forEach<br>对数组中每一项进行给定函数,没有返回值，和for循环类似</p>
+<pre><code>var numbers = [1,2,3,4,5,4,3,2,1];
+
+numbers.forEach(function(item,index,array){if(item!=2){        numbers.splice(index,1,2);    }});
+
+alert(numbers);//  [2, 2, 2, 2, 2, 2, 2, 2, 2]
+</code></pre><p>#二 归并方法<br>ES5新增了两个归并数组的方法：reduce()和reduceRight()。这两个方法迭代数组所有项，然后构建一个最终返回的值。reduce从左到右，reduceRight从右到左。</p>
+<pre><code>var values = [1,2,3,4,5] ;
+
+var sum = values.reduce(function(prev,cur,index,array){
+
+return prev + cur;
+
+});
+
+alert(sum);//15
+</code></pre><p>reduce()函数接受四个参数；前一个值、当前值、index和数组对象。这个函数返回的任何值都会作为第一个参数自动传给下一项。第一次迭代发生在第二项上，因此第一个参数是数组的第一项，第二个参数是数组的第二项。</p>
+<p>#三 转换方法<br>1 toLocaleString()  toString()  valueOf()</p>
+<p>2 join() 将数组转换为字符串，且用分隔符分割</p>
+<pre><code>var colors = [1,2,3];
+
+alert(colors.join(&quot;|&quot;));
+
+// 1|2|3
+</code></pre><p>#四 栈方法<br>栈方法是指Last-In-First-Out后进先出</p>
+<p>push() 从数组末尾添加</p>
+<p>pop() 从数组末尾移除</p>
+<p>#五 队列方法<br>队列方法是First-In-First-Out先进先出</p>
+<p>shift() 从数组前端移除</p>
+<p>unshift() 从数组前端添加</p>
+<p>#六 重排序方法<br>reverse()  反转数组sort()    </p>
+<p>排序varvalues= [0,1,5,10,15];</p>
+<pre><code>values.sort(function(a,b){returnb-a;});
+
+console.log(values);
+
+//[15,10,5,1,0]
+</code></pre><p>#七 操作方法<br>1 concat() 用于复制或者从尾部添加–&gt;创建新数组</p>
+<p>先创建一个当前数组的副本，然后jiang将接到的数组添加到末尾，返回新的数组。如果没有传参数，直接复制返回新构建的数组。</p>
+<pre><code>var values = [1,2,3];
+
+var v1 = values.concat();
+
+var v2=values.concat(4);
+
+console.log(values);//[1,2,3]
+
+console.log(v1);//[1,2,3]
+
+console.log(v2);//[1,2,3,4]
+</code></pre><p>2 slice() 用于复制或截取数组–&gt;创建新数组</p>
+<p>截取当前数组的一部分创建一个新数组。可以接受一个或者两个参数，只有一个参数时返回指定位置到尾部的数组。两个参数时，返回指定位置到结束位置之前但不包括结束位置的数组。</p>
+<pre><code>varvalues= [1,2,3];
+
+var v1 =values.slice();
+
+var v2 =values.slice(1);
+
+var v3=values.slice(1,3);
+
+console.log(values);//[1,2,3]
+
+console.log(v1);//[1,2,3]
+
+console.log(v2);//[2,3]
+
+console.log(v3);//[2,3]
+</code></pre><p>3 splice() 用于删除、插入、替换，号称最强大的数组方法</p>
+<p>3.1 删除：可以删除任意数量的项，需要两个参数，要删除的第一项的位置和要删除的项数。</p>
+<pre><code>var values= [1,2,3,4,5,6];
+
+var v =values.splice(0,2);
+
+console.log(values);//[3,4,5,6]
+
+console.log(v);//[1,2]
+</code></pre><p>3.2 插入和替换：至少三个参数，第一个是起始位置，第二个是要删除的项，第三个及以后shi yao是要插入或替换的值。</p>
+<p>插入demo：</p>
+<pre><code>var values= [1,2,3,4,5,6];
+
+var v1 =values.splice(1,0,1,1,1);
+
+console.log(values);//[1,1,1,1,2,3,4,5,6]
+
+console.log(v1);//[]
+</code></pre><p>替换demo：</p>
+<pre><code>var values= [1,2,3,4,5,6];
+
+var v1 =values.splice(1,2,1,1,1);
+
+console.log(values);//[1,1,1,1,4,5,6]
+
+console.log(v1);//[2,3]
+</code></pre><p>#八 位置方法<br>    var values = [1,2,3,4,5];</p>
+<pre><code>indexOf() 从头找指定项的位置
+
+var v1 = values.indexOf(3);
+
+lastIndexOf() 从后往前查位置
+
+var v2 = values.lastIndexOf(3);
+</code></pre>
+      
+
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">随笔</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">web</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">html5</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">js</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
+	<div class="article-category tagcloud">
+		<i class="icon-book icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="/categories/technology//" class="article-tag-list-link color3">技术</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2018/09/06/js处理数组的一些方法/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2018/09/06/list/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          list
+        
+      </div>
+    </a>
   
   
-    </div></section>
+    <a href="/2018/09/04/web-worker简易入门/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">web worker简易入门</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+    </div>
+</aside>
+
+
+
+  
+  
+  
+  <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
+<script>
+  var cloudTieConfig = {
+    url: "http://yoursite.com/2018/09/06/js处理数组的一些方法/", 
+    sourceId: "js处理数组的一些方法",
+    productKey: "true",
+    target: "cloud-tie-wrapper"
+  };
+</script>
+<script src="//img1.cache.netease.com/f2e/tie/yun/sdk/loader.js"></script>
   
 
-    
+  
+
+   
+  <section id="comments">
+<!--高速版，加载速度快，使用前需测试页面的兼容性-->
+<div id="SOHUCS" sid="js处理数组的一些方法"></div>
+<script>
+  (function(){
+    var appid = '你的APP ID',
+    conf = '你的APP KEY';
+    var doc = document,
+    s = doc.createElement('script'),
+    h = doc.getElementsByTagName('head')[0] || doc.head || doc.documentElement;
+    s.type = 'text/javascript';
+    s.charset = 'utf-8';
+    s.src =  'http://assets.changyan.sohu.com/upload/changyan.js?conf='+ conf +'&appid=' + appid;
+    h.insertBefore(s,h.firstChild);
+    window.SCS_NO_IFRAME = true;
+  })()
+</script>
+  </section>
+  
+
+  
 
 
           </div>
@@ -231,8 +519,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
@@ -293,6 +581,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
           <ul class="article-tag-list" q-show="showTags">
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">git</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">分享</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">随笔</a>
               </li>
              
@@ -305,11 +605,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">git</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">技术</a>
+                <a href="javascript:void(0)" class="js-tag color3">js</a>
               </li>
             
             <div class="clearfix"></div>
